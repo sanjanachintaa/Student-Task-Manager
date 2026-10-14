@@ -1,0 +1,266 @@
+/* ===== General page styles ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f7fb;   /* light background */
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  color: #1e3a8a;              /* dark blue headings */
+  margin-top: 0;
+}
+
+/* ===== Header ===== */
+.page-header {
+  text-align: center;
+  padding: 30px 15px 10px;
+}
+
+.page-header h1 {
+  margin-bottom: 5px;
+  font-size: 28px;
+}
+
+.page-header p {
+  margin: 0;
+  color: #4b5563;
+}
+
+/* Keeps content centered and not too wide */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 15px 40px;
+}
+
+/* ===== Dashboard summary ===== */
+.summary {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.summary-box {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.summary-number {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+.summary-label {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.pending-box .summary-number {
+  color: #2563eb;
+}
+
+.completed-box .summary-number {
+  color: #15803d;              /* green */
+}
+
+/* ===== Cards (form and tasks) ===== */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+/* ===== Form ===== */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #b6c2d6;
+  border-radius: 6px;
+}
+
+input:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #2563eb;
+}
+
+/* Message below the form (error or success) */
+.message {
+  min-height: 22px;
+  margin: 0 0 10px;
+  font-weight: bold;
+}
+
+.message.error {
+  color: #b91c1c;
+}
+
+.message.success {
+  color: #15803d;
+}
+
+/* ===== Buttons ===== */
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 9px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #2563eb;   /* blue buttons */
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+}
+
+.btn-secondary:hover {
+  background-color: #4b5563;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== Task list ===== */
+.task-section h2 {
+  margin-bottom: 15px;
+}
+
+.empty-message {
+  background-color: #ffffff;
+  border: 1px dashed #b6c2d6;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  color: #4b5563;
+}
+
+.task-card {
+  background-color: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-left: 6px solid #2563eb;   /* blue = normal pending task */
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+}
+
+.task-card h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.task-info {
+  margin: 3px 0;
+  font-size: 15px;
+}
+
+/* Completed task = green */
+.task-card.completed {
+  background-color: #f0fdf4;
+  border-color: #86efac;
+  border-left-color: #16a34a;
+}
+
+.task-card.completed h3 {
+  color: #15803d;
+  text-decoration: line-through;
+}
+
+/* Overdue pending task = red */
+.task-card.overdue {
+  background-color: #fef2f2;
+  border-color: #fca5a5;
+  border-left-color: #dc2626;
+}
+
+.task-card.overdue h3 {
+  color: #b91c1c;
+}
+
+.status-completed {
+  color: #15803d;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.status-overdue {
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* ===== Mobile screens ===== */
+@media (max-width: 600px) {
+  .page-header h1 {
+    font-size: 22px;
+  }
+
+  .summary {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .task-buttons {
+    flex-direction: column;
+  }
+}

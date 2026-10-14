@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Task and Deadline Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <h1>Student Task and Deadline Manager</h1>
+    <p>Keep track of your assignments, practicals and project deadlines.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Dashboard summary: three count boxes -->
+    <section class="summary" aria-label="Dashboard summary">
+      <div class="summary-box">
+        <span class="summary-number" id="totalCount">0</span>
+        <span class="summary-label">Total Tasks</span>
+      </div>
+      <div class="summary-box pending-box">
+        <span class="summary-number" id="pendingCount">0</span>
+        <span class="summary-label">Pending</span>
+      </div>
+      <div class="summary-box completed-box">
+        <span class="summary-number" id="completedCount">0</span>
+        <span class="summary-label">Completed</span>
+      </div>
+    </section>
+
+    <!-- Form used for both adding and editing a task -->
+    <section class="card form-card">
+      <h2 id="formTitle">Add a New Task</h2>
+
+      <form id="taskForm" novalidate>
+        <div class="form-group">
+          <label for="taskName">Task Name</label>
+          <input type="text" id="taskName" placeholder="e.g. Complete DBMS assignment">
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="e.g. Database Management">
+        </div>
+
+        <div class="form-group">
+          <label for="dueDate">Due Date</label>
+          <input type="date" id="dueDate">
+        </div>
+
+        <!-- Validation / success messages appear here -->
+        <p id="message" class="message"></p>
+
+        <div class="button-row">
+          <button type="submit" id="submitButton" class="btn btn-primary">Add Task</button>
+          <button type="button" id="cancelButton" class="btn btn-secondary hidden">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Task list -->
+    <section class="task-section">
+      <h2>My Tasks</h2>
+
+      <!-- Shown only when there are no tasks -->
+      <p id="emptyMessage" class="empty-message">
+        No tasks yet. Add your first task above to get started!
+      </p>
+
+      <!-- Task cards are inserted here by script.js -->
+      <div id="taskList"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
